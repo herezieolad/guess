@@ -29,22 +29,17 @@
       font-size: 20px;
       margin-bottom: 30px;
     }
-    .btn {
-      padding: 12px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      margin: 10px;
-      display: inline-block;
-    }
+    .btn { padding: 15px 35px; border-radius: 12px; text-decoration: none; font-size: 20px; font-weight: bold; margin: 10px; display: inline-block; cursor: pointer; transition: 0.25s ease; border: none; }
     .yes {
       background: #d6336c;
       color: white;
     }
+.yes:hover { background: #b82a5a; transform: scale(1.1);
     .no {
       background: #555;
       color: white;
     }
+.no:hover { background: #444; transform: scale(1.1); }
   </style>
 </head>
 <body>
@@ -56,13 +51,14 @@ And now, with all that in my heart, I want to ask you something special.</p>
     <h1>Will You Be My Valentine, Abell Oluwakemi?</h1>
     
 
-    <button onclick="sendResponse('Yes'); window.location.href='yes.html'">Yes</button>
-    <button onclick="sendResponse('No'); window.location.href='no.html'">No</button>
-  </div>
+   <button class="btn yes" onclick="submitResponse('Yes')">Yes 💖</button>
+<button class="btn no" onclick="submitResponse('No')">No 😢</button>
+
 
 <script> function sendResponse(answer) { const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScWQWlQ0NQ1NVEBIx8OM6R0RPWtD-8NA_8AinhOePlXJ2d4ZQ/formResponse"; const formData = new FormData(); formData.append("entry.1174233150", answer); fetch(formURL, { method: "POST", mode: "no-cors", body: formData }); } </script>
 
 </body>
 </html>
+
 
 
