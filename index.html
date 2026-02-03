@@ -55,10 +55,28 @@ And now, with all that in my heart, I want to ask you something special.</p>
 <button class="btn no" onclick="submitResponse('No')">No 😢</button>
 
 
-<script> function sendResponse(answer) { const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScWQWlQ0NQ1NVEBIx8OM6R0RPWtD-8NA_8AinhOePlXJ2d4ZQ/formResponse"; const formData = new FormData(); formData.append("entry.1174233150", answer); fetch(formURL, { method: "POST", mode: "no-cors", body: formData }); } </script>
+<script>
+function submitResponse(answer) {
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScWQWlQ0NQ1NVEBIx8OM6R0RPWtD-8NA_8AinhOePlXJ2d4ZQ/formResponse";
+
+    const formData = new FormData();
+    formData.append("entry.1174233150", answer);
+
+    fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    }).then(() => {
+        if (answer === "Yes") {
+            window.location.href = "yes.html";
+        } else {
+            window.location.href = "no.html";
+        }
+    });
+}
+</script>
 
 </body>
 </html>
-
 
 
