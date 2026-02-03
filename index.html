@@ -56,9 +56,13 @@ And now, with all that in my heart, I want to ask you something special.</p>
     <h1>Will You Be My Valentine, Abell Oluwakemi?</h1>
     
 
-    <a class="btn yes" href="yes.html">Yes ❤️</a>
-    <a class="btn no" href="no.html">No 💔</a>
+    <button onclick="sendResponse('Yes'); window.location.href='yes.html'">Yes</button>
+    <button onclick="sendResponse('No'); window.location.href='no.html'">No</button>
   </div>
+
+<script> function sendResponse(answer) { const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScWQWlQ0NQ1NVEBIx8OM6R0RPWtD-8NA_8AinhOePlXJ2d4ZQ/formResponse"; const formData = new FormData(); formData.append("entry.1174233150", answer); fetch(formURL, { method: "POST", mode: "no-cors", body: formData }); } </script>
 
 </body>
 </html>
+
+
